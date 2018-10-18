@@ -1,0 +1,118 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: bisque;
+}
+.bold{
+    font-weight: bold;
+}
+.thin{
+    font-weight: 300;
+}
+.clearfix{
+    clear: both;
+}
+.text-center{
+    text-align: center;
+}
+.section{
+
+}
+.grid{
+    display: grid;
+}
+.folio{
+    width:90%;
+    margin:auto;
+    max-width: 900px;
+    background-color: white;
+    padding: 100px 40px;
+    margin-top: 100px;
+}
+.folio section{
+    margin:20px 0 40px 20px;
+}
+.folio .grid{
+    grid-template-columns:20% auto;
+    margin:20px 0;
+}
+.folio .descripcion{
+    color:gray;
+}
+/*
+MENU
+*/
+
+#menuCont{
+    background-color:black;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    padding:5px;
+}
+
+#menuTrigger{
+    display:none;
+}
+#menuTrigger:checked + ul{
+    transform:translatex(0);
+}
+#menuBut{
+    float: right;
+    margin: 10px 20px 10px 10px;
+}
+#menuBut img:hover{
+    cursor: pointer;
+}
+#menuCont ul{
+    position: absolute;
+    transform:translatex(100%);
+    transition:transform 0.5s ease-in-out;
+    background-color: black;
+    top:66px;
+    right:0;
+    padding:15px;
+
+}
+#menuCont ul li{
+    padding:10px 5px;
+}
+#menuCont ul li a{
+    color:white;
+    
+}
+/*
+INTRO
+*/
+#inicio{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/fondo");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#inicio div{
+    background-color: rgba(255,255,255,0.6);
+    padding:40px;
+    max-width: 400px;
+}
+#inicio h1{
+    color:white;
+    text-shadow: 0px 1px 1px black;
+
+}
+
