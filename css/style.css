@@ -37,6 +37,7 @@ body{
     background-color: white;
     padding: 100px 40px;
     margin-top: 100px;
+    position: relative;
 }
 .folio section{
     margin:20px 0 40px 20px;
@@ -53,12 +54,13 @@ MENU
 */
 
 #menuCont{
-    background-color:black;
+    background-color:#303030;
     position: fixed;
     width: 100%;
     top:0;
     left:0;
     padding:5px;
+    z-index: 10;
 }
 
 #menuTrigger{
@@ -78,7 +80,7 @@ MENU
     position: absolute;
     transform:translatex(100%);
     transition:transform 0.5s ease-in-out;
-    background-color: black;
+    background-color: #7b7474;
     top:66px;
     right:0;
     padding:15px;
@@ -116,3 +118,41 @@ INTRO
 
 }
 
+.avatar img{
+    width: 200px;
+    float: right;
+    margin-top: -50px;
+}
+
+.folio::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -25px;
+    background: #FFE4C4;
+    border-left: solid 37px transparent;
+    border-right: solid 40px transparent;
+    border-top: solid 39px #FFE4C4;
+    transform: rotate(134deg);
+}
+
+.esquina-doblada .fondo{
+    position: absolute;
+    top: -4px;
+    left: -25px;
+    background: #FFE4C4;
+    border-left: solid 37px transparent;
+    border-right: solid 40px transparent;
+    border-top: solid 39px #FFE4C4;
+    transform: rotate(134deg); 
+}
+.esquina-doblada .doblez{
+    position: absolute;
+    top: 22px;
+    left: 2px;
+    background: white;
+    border-left: solid 37px transparent;
+    border-right: solid 40px transparent;
+    border-top: solid 39px #d2d1d1;
+    transform: rotate(314deg);
+}
