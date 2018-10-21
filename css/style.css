@@ -10,7 +10,28 @@ a{
     text-decoration: none;
 }
 body{
-    
+    /*font-family: 'Nanum Gothic', sans-serif;*/
+    font-family: 'Dosis', sans-serif;
+    color: #434343;
+}
+img{
+    display: block;
+    width:100%;
+}
+.fading{
+    opacity:0;
+    transition: opacity 1s linear;
+}
+.fadeOn{
+    opacity: 1;
+}
+.d-flex{
+    display: flex;
+    flex-flow: row wrap;
+}
+.flex-center{
+    justify-content: center;
+    align-content: center;
 }
 .no-scroll{
     overflow-y:hidden;
@@ -18,6 +39,7 @@ body{
 .d-none{
     display:none !important;
 }
+
 .bold{
     font-weight: bold;
 }
@@ -30,8 +52,14 @@ body{
 .text-center{
     text-align: center;
 }
-.section{
-
+.right{
+    float:right;
+}
+.left{
+    float:left;
+}
+main > section{
+    margin-bottom: 120px !important;
 }
 .folio{
     font-family: 'Indie Flower', cursive;
@@ -44,8 +72,25 @@ body{
     position: relative;
     background: url("../img/paper.png");
 }
+.folio header{
+    display: grid;
+    grid-template-columns: auto 35%;
+}
+.folio header h2{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.folio header h2 strong{
+    font-size: 25px;
+    text-transform: uppercase;
+}
 .folio section{
-    margin:20px 0 40px 20px;
+    padding:100px 0 40px 20px;
+}
+.folio h3{
+    border-bottom: 1px solid black;
 }
 .folio .grid{
     grid-template-columns:20% auto;
@@ -54,6 +99,7 @@ body{
 .folio .descripcion{
     color:gray;
 }
+
 /*
     LOADING
 */
@@ -63,29 +109,33 @@ body{
     left:0;
     width:100%;
     height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: white;
     z-index: 9;
 }
 .loader img{
-    display: block;
+    width:180px;
 }
 /*
     MENU
 */
 
 #menuCont{
-    background-color:#303030;
+    background-color:#303f7e;
     position: fixed;
     width: 100%;
     top:0;
     left:0;
     padding:5px;
     z-index: 10;
+    height: 65px;
 }
-
+.logo span{
+    float:left;
+    font-size: 19px;
+    margin: 14px 10px 10px 30px;
+    color:white;
+    font-weight: bold;
+}
 #menuTrigger{
     display:none;
 }
@@ -107,17 +157,23 @@ body{
     position: absolute;
     transform:translatex(100%);
     transition:transform 0.5s ease-in-out;
-    background-color: #7b7474;
-    top:66px;
+    background-color: #3e3e3e;
+    top:65px;
     right:0;
     padding:15px;
+    height: 100vh;
 
 }
 #menuCont ul li{
     padding:10px 5px;
 }
+#menuCont ul li:hover{
+    cursor: pointer;
+    transform: scale(1.06);
+}
 #menuCont ul li a{
     color:white;
+    font-size: 18px;
     
 }
 /*
@@ -129,34 +185,30 @@ INTRO
     background-image: url("../img/fondo");
     background-size: cover;
     background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
 }
 #inicio div{
-    background-color: rgba(255,255,255,0.6);
+    /*background-color: rgba(255,255,255,0.6);*/
+    background-color:rgba(48, 63, 126,0.6);
     padding:40px;
     max-width: 600px;
 }
 #inicio h1{
     color:white;
-    text-shadow: 0px 1px 2px black;
+    /*text-shadow: 0px 1px 2px black;*/
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 26px;
 
 }
 #inicio h1 span{
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 20px;
     display: block;
 }
 
 .avatar img{
-    width:50%;
     max-width: 190px;
     float: right;
-    margin-top: -50px;
 }
 
 .folio::before {
@@ -192,16 +244,69 @@ INTRO
     transform: rotate(314deg);
 }
 
-.esquin-doblada .sombra-abajo{
+.esquina-doblada .sombra-abajo{
     position: absolute;
     top: 54px;
     left: 0;
     width: 51px;
     height: 0;
     border-top: 1px solid transparent;
-    box-shadow: 1px 1px 1px gray;
+    box-shadow: 1px 1px 3px #e1e1e1;
 }
 
+.esquina-doblada .sombra-derecha{
+    position: absolute;
+    top: 28px;
+    left: 27px;
+    width: 52px;
+    height: 0;
+    border-top: 1px solid transparent;
+    box-shadow: 1px 1px 3px #e1e1e1;
+    transform: rotate(90deg);
+}
+/*
+    FORMULARIO
+*/
+#formulario{
+    padding: 60px 20px;
+}
+#formulario header button{
+    margin:auto;
+    margin-top:30px;
+    display: block;
+    background-color: #303f7e;
+    border: 0;
+    color: white;
+    padding:15px;
+}
+
+#formulario header button:hover{
+    cursor: pointer;
+    transform: scale(1.06);
+}
+
+#formulario header button:active{
+    background-color: #1a2348;
+}
+
+#formulario form{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: white;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 12;
+}
+
+#formulario form .closeButton{
+    float: right;
+    margin: 20px 20px 0 0;
+    background:none;
+    border:none;
+    width: 65px;
+}
 /*
     MEDIA QUERYS
 */
@@ -212,5 +317,17 @@ INTRO
     }
     .grid{
         display: grid;
+    }
+}
+@media print{
+    .folio{
+        margin-top: 0;
+        padding:0;
+    }
+    .folio section{
+        padding-top: 20px;
+    }
+    .no-print{
+        display: none;
     }
 }

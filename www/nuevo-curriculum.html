@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
@@ -13,37 +13,19 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:600" rel="stylesheet">
 
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
     <meta charset="UTF-8">
     <title>Javier Guisado Peña || GitHub </title>
 </head>
 
 <body class="no-scroll">
     <header class="no-print">
-        <nav id="menuCont">
-            <div class="logo">
-                <span>MiCurrilum</span>
-            </div>
-            <label id="menuBut" for="menuTrigger"><img src="img/boton.png" width="32" height="32"></label>
-            <input id="menuTrigger" type="checkbox" />
-            <ul>
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#estudios">ESTUDIOS</a></li>
-                <li><a href="#exp-laboral">EXPERIENCIA LABORAL</a></li>
-                <li><a href="#formulario">COMPLETA EL TUYO</a></li>
-            </ul>
-            <div class="clearfix"></div>
-        </nav>
+
     </header>
     <div class="loader d-flex flex-center no-print">
         <img src="img/loading.gif">
     </div>
     <main>
-        <section id="inicio" class="d-flex flex-center no-print">
-            <div class="fading">
-                <h1 class=" text-center"><span>¡Hola!</span>Soy Javier Guisado y este es mi currículum</h1>
-            </div>
-        </section>
         <section class="folio">
             <div class="esquina-doblada no-print">
                 <div class="fondo"></div>
@@ -54,7 +36,7 @@
             <header>
                 <h2 class="left"><strong>Curriculum Vitae</strong><br>Javier Guisado Peña</h2>
                 <div class="avatar">
-                    <img src="img/avatar.png">
+                    <img src="../img/avatar.png">
                     <div class="clearfix"></div>
                 </div>
             </header>
@@ -148,24 +130,6 @@
                     </div>
                 </div>
             </section>
-        </section>
-        <section id="formulario" class="d-flex flex-center no-print">
-            <header>
-                <h2>¿Quieres tener tu propio webcurrilucum?</h2>
-                <button onclick="openForm()">EMPEZAR</button>
-            </header>
-            <div id="form" class="d-none">
-                <form>
-                <button class="closeButton" onclick="closeForm(event)"><img src="img/close.png"></button>
-                <div class="clearfix"></div>
-                <div class="form-group">
-                    <label for="" ></label>
-                    <input type="text" id="" name="">
-                </div>
-                    
-                </form>
-                
-            </div>
         </section>
     </main>
     <footer></footer>
