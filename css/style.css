@@ -27,11 +27,12 @@ img{
 }
 .d-flex{
     display: flex;
+    display:-webkit- flex;
     flex-flow: row wrap;
 }
 .flex-center{
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 .no-scroll{
     overflow-y:hidden;
