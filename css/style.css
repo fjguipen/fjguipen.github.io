@@ -12,6 +12,12 @@ a{
 body{
     
 }
+.no-scroll{
+    overflow-y:hidden;
+}
+.d-none{
+    display:none !important;
+}
 .bold{
     font-weight: bold;
 }
@@ -49,7 +55,25 @@ body{
     color:gray;
 }
 /*
-MENU
+    LOADING
+*/
+.loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 9;
+}
+.loader img{
+    display: block;
+}
+/*
+    MENU
 */
 
 #menuCont{
@@ -178,6 +202,9 @@ INTRO
     box-shadow: 1px 1px 1px gray;
 }
 
+/*
+    MEDIA QUERYS
+*/
 @media only screen and (min-width: 600px){
     .folio{
         padding:100px 40px;
