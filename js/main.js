@@ -46,7 +46,7 @@ function deleteEntry(event){
 function addCampoEstudio(event) {
     let section = event.target.parentNode;
     let cont = section.children.length - 2;
-    let entryRow = `<div class="entry">
+    let entryRow = `<div class="entry studio">
                         <div class="row">
                             <div class="form-group">
                                 <label for="fechaStudio${cont}">Fecha:</label>
@@ -80,7 +80,7 @@ function addCampoEstudio(event) {
 function addCampoExp(event) {
     let section = event.target.parentNode;
     let cont = section.children.length - 2;
-    let entryRow = `<div class="entry">
+    let entryRow = `<div class="entry exp">
                         <div class="row">
                             <div class="form-group">
                                 <label for="fechaExp${cont}">Fecha:</label>
@@ -106,7 +106,7 @@ function addCampoExp(event) {
                         <div class="row">
                             <div class="form-group">
                                 <label for="descripcionExp${cont}">Tareas desempeñadas:</label>
-                                <textarea id="descripcionExp${cont}"></textarea>
+                                <textarea id="descripcionExp${cont}" name="descripcionExp${cont}"></textarea>
                             </div>
                         </div>
                         <button class="right" onclick="deleteEntry(event)">Borrar</button>
@@ -116,4 +116,89 @@ function addCampoExp(event) {
     event.preventDefault()
     event.target.insertAdjacentHTML('beforebegin', entryRow);
 }
+
+function creaCurriculum(event){
+    event.preventDefault()
+    let estudios = new Map();
+    Array.from(document.querySelectorAll('.entry.studio input'))
+    .forEach(e=>{
+       estudios.set(e.name, e.value)
+    })
+    let numRowsEstudios = document.querySelectorAll('section .entry.studio').length
+    
+    let trabajos = new Map()
+    Array.from(document.querySelectorAll('.entry.exp input'))
+    .forEach(e=>{
+        trabajos.set(e.name, e.value)
+    });
+    Array.from(document.querySelectorAll('.entry.exp textarea')).forEach(e=>{
+      trabajos.set(e.name, e.value);
+    })
+    let numRowsExp = document.querySelectorAll('section .entry.exp').length
+
+    let curriculum = ` <div class="esquina-doblada no-print">
+                            <div class="fondo"></div>
+                            <div class="doblez"></div>
+                            <div class="sombra-abajo"></div>
+                            <div class="sombra-derecha"></div>
+                        </div>
+                        <header>
+                            <h2 class="left"><strong>Curriculum Vitae</strong><br>${document.querySelector('#name').value}</h2>
+                            <div class="avatar">
+                                <img src="../img/avatar.png">
+                                <div class="clearfix"></div>
+                            </div>
+                        </header>
+                        <section id="estudios">
+                            <h3 class="bold">ESTUDIOS</h3>`
+
+    for(let i=0; i < numRowsEstudios;i++){
+        curriculum+=    `<div class="grid">
+                            <div class="">
+                                <span class="when bold">${estudios.get(`fechaStudio${i}`)}</span><br>
+                                <span class="where">${estudios.get(`lugarStudio${i}`)}</span>
+                            </div>
+                            <div class="">
+                                <span class="what bold">Técnico superior en desarrollo de Aplicaciones Web</span><br>
+                                <span class="at">Nuevas Profesiones</span>
+                            </div>
+                        </div>`
+
+    }                        
+
+    curriculum += `</section>
+                        <section id="exp-laboral">
+                            <h3 class="bold">EXPERIENCIA LABORAL</h3>`
+                            
+      for(let i=0;i < numRowsExp;i++){
+        curriculum+=    `<div class="grid">
+                            <div class="">
+                                <span class="when bold">${trabajos.get(`fechaExp${i}`)}</span><br>
+                                <span class="where">${trabajos.get(`lugarExp${i}`)}</span>
+                            </div>
+                            <div class="">
+                                <span class="what bold">${trabajos.get(`empresaExp${i}`)}</span><br>
+                                <span class="what bold">Cargo ocupado: ${trabajos.get(`cargoExp${i}`)}</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class=""></div>
+                            <div class="descripcion">
+                                Tareas realizadas: ${trabajos.get(`descripcionExp0${i}`)}
+                            </div>
+                        </div>`
+      }                     
+
+    curriculum+= `</section>`;
+
+    //curriculum = encodeURI(curriculum);
+    curriculum = curriculum.replace("curriculum=","")
+    curriculum = curriculum.replace(/(\r\n\t|\n|\r\t)/gm,"");
+
+    document.cookie = `curriculum=${curriculum};` 
+
+
+    event.target.submit()
+}
+
 

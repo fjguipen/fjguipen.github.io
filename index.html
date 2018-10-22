@@ -156,7 +156,7 @@
             </header>
             <div id="form" class="d-none">
                 <button class="closeButton" onclick="closeForm(event)"><img src="img/close.png"></button>
-                <form>
+                <form action="www/nuevo-curriculum.html" method="post"  onsubmit="creaCurriculum(event)">
                     <div class="clearfix"></div>
                     <div class="form-group">
                         <label for="name">Nombre completo:</label>
@@ -164,27 +164,27 @@
                     </div>
                     <section>
                         <h2>Estudios</h2>
-                        <div class="entry">
+                        <div class="entry studio">
                             <div class="row">
                                 <div class="form-group">
                                     <label for="fechaStudio">Fecha:</label>
-                                    <input type="text" id="fechaStudio" name="fechaStudio">
+                                    <input type="text" id="fechaStudio0" name="fechaStudio0">
                                 </div>
                                 <div class="form-group">
                                     <label for="lugarStudio">Lugar:</label>
-                                    <input type="text" id="lugarStudio" name="lugarStudio" placeholder="Localidad, Provincia">
+                                    <input type="text" id="lugarStudio0" name="lugarStudio0" placeholder="Localidad, Provincia">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="tituloStudio">Títulación:</label>
-                                    <input type="text" id="tituloStudio" name="tituloStudio">
+                                    <label for="tituloStudio0">Títulación:</label>
+                                    <input type="text" id="tituloStudio0" name="tituloStudio0">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="entidadStudio">Titulo concedico por:</label>
-                                    <input type="text" id="entidadStudio" name="entidadStudio">
+                                    <label for="entidadStudio0">Titulo concedico por:</label>
+                                    <input type="text" id="entidadStudio0" name="entidadStudio0">
                                 </div>
                             </div>
                         </div>
@@ -192,38 +192,39 @@
                     </section>
                     <section>
                         <h2>Experiencia Laboral</h2>
-                        <div class="entry">
+                        <div class="entry exp">
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="fechaExp">Fecha:</label>
-                                    <input type="text" id="fechaExp" name="fechaExp">
+                                    <label for="fechaExp0">Fecha:</label>
+                                    <input type="text" id="fechaExp0" name="fechaExp0">
                                 </div>
                                 <div class="form-group">
-                                    <label for="lugarExp">Lugar:</label>
-                                    <input type="text" id="lugarExp" name="lugarExp" placeholder="Localidad, Provincia">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="empresaExp">Títulación:</label>
-                                    <input type="text" id="empresaExp" name="empresaExp">
+                                    <label for="lugarExp0">Lugar:</label>
+                                    <input type="text" id="lugarExp0" name="lugarExp0" placeholder="Localidad, Provincia">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="cargoExp">Titulo concedico por:</label>
-                                    <input type="text" id="cargoExp" name="cargoExp">
+                                    <label for="empresaExp0">Títulación:</label>
+                                    <input type="text" id="empresaExp0" name="empresaExp0">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
-                                    <label for="descripcionExp">Tareas desempeñadas:</label>
-                                    <textarea id="descripcionExp"></textarea>
+                                    <label for="cargoExp0">Titulo concedico por:</label>
+                                    <input type="text" id="cargoExp0" name="cargoExp0">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="descripcionExp0">Tareas desempeñadas:</label>
+                                    <textarea id="descripcionExp0" name="descripcionExp0"></textarea>
                                 </div>
                             </div>
                         </div>
                         <button class="añadir" onclick="addCampoExp(event)">Añadir Experiencia</button>
                     </section>
+                    <button type="submit">Terminar</button>
                 </form>
             </div>
         </section>

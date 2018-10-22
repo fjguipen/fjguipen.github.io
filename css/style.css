@@ -359,6 +359,13 @@ INTRO
     padding:10px;
 
 }
+#form form button[type="submit"]{
+    display: block;
+    margin-left: auto;
+    margin-top: 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
 /*
     MEDIA QUERYS
 */
