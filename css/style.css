@@ -27,7 +27,7 @@ img{
 }
 .d-flex{
     display: flex;
-    display:-webkit- flex;
+    display:-webkit-flex;
     flex-flow: row wrap;
 }
 .flex-center{
@@ -58,6 +58,14 @@ img{
 }
 .left{
     float:left;
+}
+.row{
+    display: flex;
+    display: -webkit-flex;
+}
+.row *{
+    flex:auto;
+    -webkit-flex:auto;
 }
 main > section{
     margin-bottom: 120px !important;
@@ -95,6 +103,7 @@ main > section{
 }
 .folio .grid{
     grid-template-columns:20% auto;
+    grid-column-gap: 10px;
     margin:20px 0;
 }
 .folio .descripcion{
@@ -140,18 +149,22 @@ main > section{
 #menuTrigger{
     display:none;
 }
-#menuTrigger:checked + ul{
+#menuTrigger:checked ~ ul{
     transform:translatex(0);
+}
+#menuTrigger:checked + #menuBut{
+    background-image:url("../img/close-w.png");
 }
 #menuBut{
     float: right;
     margin: 10px 20px 10px 10px;
-}
-#menuBut img {
-    width:38px;
+    background-image:url("../img/boton.png");
+    background-size: 100% 100%;
+    width: 38px;
     height: 32px;
 }
-#menuBut img:hover{
+
+#menuBut:hover{
     cursor: pointer;
 }
 #menuCont ul{
@@ -281,16 +294,16 @@ INTRO
     padding:15px;
 }
 
-#formulario header button:hover{
+#formulario button:hover{
     cursor: pointer;
     transform: scale(1.06);
 }
 
-#formulario header button:active{
+#formulario button:active{
     background-color: #1a2348;
 }
 
-#formulario form{
+#formulario #form{
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -299,14 +312,52 @@ INTRO
     top:0;
     left: 0;
     z-index: 12;
+    padding-bottom: 100px;
 }
 
-#formulario form .closeButton{
+#formulario .closeButton{
     float: right;
     margin: 20px 20px 0 0;
     background:none;
     border:none;
-    width: 65px;
+    width: 32px;
+}
+#form form label{
+    display: block;
+}
+
+#form form{
+    margin:auto;
+    max-width: 600px;
+    margin-bottom:60px;
+}
+#form form section{
+    margin-top:30px;
+}
+#form form .form-group{
+    margin:10px;
+}
+#form form input, #form form textarea{
+    width:100%;
+    border: 0;
+    background-color: #ececec;
+    padding: 10px;
+}
+#form form input:focus, #form form textarea:focus{
+    background-color:bisque;
+}
+#form form .entry {
+
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+#form form button{
+    background-color:#303f7e;
+    border:none;
+    color:white;
+    padding:10px;
+
 }
 /*
     MEDIA QUERYS
