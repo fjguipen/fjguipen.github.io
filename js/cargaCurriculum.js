@@ -6,9 +6,10 @@ window.onload= function(){
 function cargarCurriculum(){
     let cont = document.querySelector('.folio');
     let curriculum = document.cookie;
-
-    console.log()
-
+    
+    if(!curriculum){
+        curriculum = "No hay datos"
+    }
 
     cont.insertAdjacentHTML('beforeend', curriculum.replace("curriculum=", ""))
     //console.log(curriculum)
