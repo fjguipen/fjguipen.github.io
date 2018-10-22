@@ -199,6 +199,7 @@ function creaCurriculum(event){
 
 
     event.target.submit()
+    //window.location = 
 }
 
 

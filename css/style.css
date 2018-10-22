@@ -299,7 +299,7 @@ INTRO
     transform: scale(1.06);
 }
 
-#formulario button:active{
+#formulario form button:active{
     background-color: #1a2348;
 }
 
