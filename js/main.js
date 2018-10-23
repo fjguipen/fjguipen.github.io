@@ -2,7 +2,7 @@ window.onload = function () {
     //Placeholder carga de la pagina
     loading();
     //FadeIn h1
-    fadeIn(document.querySelector('#inicio .fading'));
+    fadeIn(document.querySelector('#inicio .fadingFast'));
     //Lineas de aptitud
     let aptitudes = document.querySelectorAll('#aptitudes .bar')  
     setWidth(aptitudes)

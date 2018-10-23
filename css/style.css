@@ -29,6 +29,11 @@ img{
 .comeOn{
     left:0;
 }
+.fadingFast{
+    opacity:0;
+    transition: opacity 1s linear 0.5s;
+}
+
 .fading{
     opacity:0;
     transition: opacity 1s linear 0.7s;
