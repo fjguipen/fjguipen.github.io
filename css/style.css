@@ -18,13 +18,39 @@ img{
     display: block;
     width:100%;
 }
+/*
+    ANIMACIONES
+*/
+.coming{
+    position: relative;
+    left: -100vh;
+    transition: left 1s ease-in;
+}
+.comeOn{
+    left:0;
+}
 .fading{
     opacity:0;
-    transition: opacity 1s linear;
+    transition: opacity 1s linear 0.7s;
 }
 .fadeOn{
     opacity: 1;
 }
+.bar{
+    width:0;
+    background-color:#434343;
+    height: 40px;
+}
+
+.crecerOn{
+    animation: crecer 4s ease-out 0.7s;
+    animation-fill-mode: forwards;
+}
+@keyframes crecer{
+    0%{width:0%;}
+    100%{width:100%;}
+}
+
 .d-flex{
     display: flex;
     display:-webkit-flex;
@@ -277,6 +303,13 @@ INTRO
     border-top: 1px solid transparent;
     box-shadow: 1px 1px 3px #e1e1e1;
     transform: rotate(90deg);
+}
+.aptitudes-wrap{
+    max-width:385px;
+    margin-top:40px;
+}
+.aptitud{
+    margin-bottom:15px;
 }
 /*
     FORMULARIO

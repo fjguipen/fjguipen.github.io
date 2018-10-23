@@ -1,6 +1,40 @@
 window.onload = function () {
+    //Placeholder carga de la pagina
     loading();
-    fadeIn();
+    //FadeIn h1
+    fadeIn(document.querySelector('#inicio .fading'));
+    //Lineas de aptitud
+    let aptitudes = document.querySelectorAll('#aptitudes .bar')  
+    setWidth(aptitudes)
+    //
+    let faded = false;
+    let folio = document.querySelector('.folio');
+    let fadingItems = folio.querySelectorAll('.fading');
+    let comingItems = folio.querySelectorAll('.coming');
+    window.onscroll = () => {
+        fadingItems.forEach(e=>{
+            let esVisible = (e.offsetTop - pageYOffset) < 0 /*< window.innerHeight*/;
+
+            if (esVisible && !e.classList.contains('fadeOn')){
+                e.classList.add('fadeOn')
+            }
+        })
+
+        comingItems.forEach(e=>{
+            let esVisible = (e.offsetTop - pageYOffset) < 0 /*< window.innerHeight*/;
+
+            if (esVisible && !e.classList.contains('comeOn')){
+                e.classList.add('comeOn')
+            }
+        })
+        aptitudes.forEach(e=>{
+            let esVisible = (e.offsetTop - pageYOffset) < 0 /*< window.innerHeight*/;
+
+            if (esVisible && !e.classList.contains('crecerOn')){
+                e.classList.add('crecerOn')
+            }
+        })        
+    }
 }
 
 
@@ -13,12 +47,19 @@ function loading() {
 
 }
 
-function fadeIn() {
-    let elemento = document.querySelector('.fading')
+function fadeIn(elemento) {
 
     elemento.classList.add('fadeOn')
 
 
+}
+
+function setWidth(elementos){
+    elementos.forEach(e=>{
+        console.log(e)
+        let width = e.dataset.filled;
+        e.style.maxWidth = width + '%';
+    })
 }
 
 function openForm() {
@@ -38,7 +79,7 @@ function closeForm(event) {
     form.classList.add('d-none')
 }
 
-function deleteEntry(event){
+function deleteEntry(event) {
     event.preventDefault();
     event.target.parentNode.remove()
 }
@@ -99,13 +140,13 @@ function addCampoExp(event) {
                         </div>
                         <div class="row">
                             <div class="form-group">
-                                <label for="cargoExp${cont}">Titulo concedico por:</label>
+                                <label for="cargoExp${cont}">Empresa:</label>
                                 <input type="text" id="cargoExp${cont}" name="cargoExp${cont}">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
-                                <label for="descripcionExp${cont}">Tareas desempeñadas:</label>
+                                <label for="descripcionExp${cont}">Cargo:</label>
                                 <textarea id="descripcionExp${cont}" name="descripcionExp${cont}"></textarea>
                             </div>
                         </div>
@@ -117,22 +158,22 @@ function addCampoExp(event) {
     event.target.insertAdjacentHTML('beforebegin', entryRow);
 }
 
-function creaCurriculum(event){
+function creaCurriculum(event) {
     event.preventDefault()
     let estudios = new Map();
     Array.from(document.querySelectorAll('.entry.studio input'))
-    .forEach(e=>{
-       estudios.set(e.name, e.value)
-    })
+        .forEach(e => {
+            estudios.set(e.name, e.value)
+        })
     let numRowsEstudios = document.querySelectorAll('section .entry.studio').length
-    
+
     let trabajos = new Map()
     Array.from(document.querySelectorAll('.entry.exp input'))
-    .forEach(e=>{
-        trabajos.set(e.name, e.value)
-    });
-    Array.from(document.querySelectorAll('.entry.exp textarea')).forEach(e=>{
-      trabajos.set(e.name, e.value);
+        .forEach(e => {
+            trabajos.set(e.name, e.value)
+        });
+    Array.from(document.querySelectorAll('.entry.exp textarea')).forEach(e => {
+        trabajos.set(e.name, e.value);
     })
     let numRowsExp = document.querySelectorAll('section .entry.exp').length
 
@@ -152,8 +193,8 @@ function creaCurriculum(event){
                         <section id="estudios">
                             <h3 class="bold">ESTUDIOS</h3>`
 
-    for(let i=0; i < numRowsEstudios;i++){
-        curriculum+=    `<div class="grid">
+    for (let i = 0; i < numRowsEstudios; i++) {
+        curriculum += `<div class="grid">
                             <div class="">
                                 <span class="when bold">${estudios.get(`fechaStudio${i}`)}</span><br>
                                 <span class="where">${estudios.get(`lugarStudio${i}`)}</span>
@@ -164,14 +205,14 @@ function creaCurriculum(event){
                             </div>
                         </div>`
 
-    }                        
+    }
 
     curriculum += `</section>
                         <section id="exp-laboral">
                             <h3 class="bold">EXPERIENCIA LABORAL</h3>`
-                            
-      for(let i=0;i < numRowsExp;i++){
-        curriculum+=    `<div class="grid">
+
+    for (let i = 0; i < numRowsExp; i++) {
+        curriculum += `<div class="grid">
                             <div class="">
                                 <span class="when bold">${trabajos.get(`fechaExp${i}`)}</span><br>
                                 <span class="where">${trabajos.get(`lugarExp${i}`)}</span>
@@ -187,15 +228,15 @@ function creaCurriculum(event){
                                 Tareas realizadas: ${trabajos.get(`descripcionExp0${i}`)}
                             </div>
                         </div>`
-      }                     
+    }
 
-    curriculum+= `</section>`;
+    curriculum += `</section>`;
 
     //curriculum = encodeURI(curriculum);
-    curriculum = curriculum.replace("curriculum=","")
-    curriculum = curriculum.replace(/(\r\n\t|\n|\r\t)/gm,"");
+    curriculum = curriculum.replace("curriculum=", "")
+    curriculum = curriculum.replace(/(\r\n\t|\n|\r\t)/gm, "");
 
-    document.cookie = `curriculum=${curriculum};` 
+    document.cookie = `curriculum=${curriculum};`
 
 
     event.target.submit()
