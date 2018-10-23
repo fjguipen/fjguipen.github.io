@@ -159,8 +159,8 @@ function creaCurriculum(event){
                                 <span class="where">${estudios.get(`lugarStudio${i}`)}</span>
                             </div>
                             <div class="">
-                                <span class="what bold">Técnico superior en desarrollo de Aplicaciones Web</span><br>
-                                <span class="at">Nuevas Profesiones</span>
+                                <span class="what bold">${estudios.get(`tituloStudio${i}`)}</span><br>
+                                <span class="at">${estudios.get(`entidadStudio${i}`)}</span>
                             </div>
                         </div>`
 
