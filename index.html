@@ -34,8 +34,8 @@
                 <li><a href="#inicio">INICIO</a></li>
                 <li><a href="#estudios">ESTUDIOS</a></li>
                 <li><a href="#exp-laboral">EXPERIENCIA LABORAL</a></li>
-                <li><a href="#formulario">COMPLETA EL TUYO</a></li>
                 <li><a href="#aptitudes">TECNOLOGÍAS</a></li>
+                <li><a href="#formulario">COMPLETA EL TUYO</a></li>
             </ul>
             <div class="clearfix"></div>
         </nav>
@@ -187,7 +187,7 @@
                     <div class="clearfix"></div>
                     <div class="form-group">
                         <label for="name">Nombre completo:</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <section>
                         <h2>Estudios</h2>
@@ -195,23 +195,23 @@
                             <div class="row">
                                 <div class="form-group">
                                     <label for="fechaStudio">Fecha:</label>
-                                    <input type="text" id="fechaStudio0" name="fechaStudio0">
+                                    <input type="text" id="fechaStudio0" name="fechaStudio0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="lugarStudio">Lugar:</label>
-                                    <input type="text" id="lugarStudio0" name="lugarStudio0" placeholder="Localidad, Provincia">
+                                    <input type="text" id="lugarStudio0" name="lugarStudio0" placeholder="Localidad, Provincia" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="tituloStudio0">Títulación:</label>
-                                    <input type="text" id="tituloStudio0" name="tituloStudio0">
+                                    <input type="text" id="tituloStudio0" name="tituloStudio0" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="entidadStudio0">Título concedico por:</label>
-                                    <input type="text" id="entidadStudio0" name="entidadStudio0">
+                                    <input type="text" id="entidadStudio0" name="entidadStudio0" required>
                                 </div>
                             </div>
                         </div>
@@ -223,50 +223,38 @@
                             <div class="row">
                                 <div class="form-group">
                                     <label for="fechaExp0">Fecha:</label>
-                                    <input type="text" id="fechaExp0" name="fechaExp0">
+                                    <input type="text" id="fechaExp0" name="fechaExp0" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="lugarExp0">Lugar:</label>
-                                    <input type="text" id="lugarExp0" name="lugarExp0" placeholder="Localidad, Provincia">
+                                    <input type="text" id="lugarExp0" name="lugarExp0" placeholder="Localidad, Provincia" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="empresaExp0">Empresa:</label>
-                                    <input type="text" id="empresaExp0" name="empresaExp0">
+                                    <input type="text" id="empresaExp0" name="empresaExp0" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="cargoExp0">Cargo:</label>
-                                    <input type="text" id="cargoExp0" name="cargoExp0">
+                                    <input type="text" id="cargoExp0" name="cargoExp0" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="descripcionExp0">Tareas desempeñadas:</label>
-                                    <textarea id="descripcionExp0" name="descripcionExp0"></textarea>
+                                    <textarea id="descripcionExp0" name="descripcionExp0" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <button class="añadir" onclick="addCampoExp(event)">Añadir Experiencia</button>
                     </section>
                     <section>
-                            <h2>Tecnologías</h2><!--
-                            <div class="entry exp">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label for="nombreTec0">Nombre tecnología:</label>
-                                        <input type="text" id="nombreTec0" class="nombreTec" name="nombreTec0">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nivelTec0">Nivel(1-100):</label>
-                                        <input type="text" id="nivelTec0" class="nivelTel" name="nivelTec0">
-                                    </div>
-                                </div>
-                            </div>-->
+                            <h2>Tecnologías</h2>
                             <button class="añadir" onclick="addCampoTec(event)">Añadir tecnología</button>
-                        </section>
+                    </section>
                     <button type="submit">Terminar</button>
                 </form>
             </div>
