@@ -4,13 +4,20 @@ window.onload = function () {
     //FadeIn h1
     fadeIn(document.querySelector('#inicio .fadingFast'));
     //Lineas de aptitud
-    let aptitudes = document.querySelectorAll('#aptitudes .bar')  
+    let aptitudes = document.querySelectorAll('#aptitudes .bar')
     setWidth(aptitudes)
-    //
-    let faded = false;
+    //Puesta a punto de animaciónes
+    cargaAnimación(aptitudes)
+    //Limpieza de variable
+    aptitudes="";
+}
+
+function cargaAnimación(aptitudes){
+    
     let folio = document.querySelector('.folio');
     let fadingItems = folio.querySelectorAll('.fading');
     let comingItems = folio.querySelectorAll('.coming');
+    
     window.onscroll = () => {
         fadingItems.forEach(e=>{
             let esVisible = (e.offsetTop - pageYOffset) < 0 /*< window.innerHeight*/;
@@ -37,7 +44,6 @@ window.onload = function () {
     }
 }
 
-
 function loading() {
     let body = document.querySelector('body');
     let loader = document.querySelector('.loader');
@@ -56,7 +62,6 @@ function fadeIn(elemento) {
 
 function setWidth(elementos){
     elementos.forEach(e=>{
-        console.log(e)
         let width = e.dataset.filled;
         e.style.maxWidth = width + '%';
     })
@@ -158,8 +163,31 @@ function addCampoExp(event) {
     event.target.insertAdjacentHTML('beforebegin', entryRow);
 }
 
+function addCampoTec(event) {
+    let section = event.target.parentNode;
+    let cont = section.children.length - 2;
+    let entryRow = `<div class="entry tec">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nombreTec${cont}">Nombre tecnología:</label>
+                                <input type="text" id="nombreTec${cont}" class="nombreTec" name="nombreTec${cont}">
+                            </div>
+                            <div class="form-group">
+                                <label for="nivelTec${cont}">Nivel(1-100):</label>
+                                <input type="text" id="nivelTec${cont}" class="nivelTec" name="nivelTec${cont}">
+                            </div>
+                        </div>
+                        <button class="right" onclick="deleteEntry(event)">Borrar</button>
+                        <div class="clearfix"></div>
+                    </div>`
+
+    event.preventDefault()
+    event.target.insertAdjacentHTML('beforebegin', entryRow);
+}
+
 function creaCurriculum(event) {
     event.preventDefault()
+    //Campos estudios
     let estudios = new Map();
     Array.from(document.querySelectorAll('.entry.studio input'))
         .forEach(e => {
@@ -167,15 +195,29 @@ function creaCurriculum(event) {
         })
     let numRowsEstudios = document.querySelectorAll('section .entry.studio').length
 
+    //Campos experiencia laboral
     let trabajos = new Map()
     Array.from(document.querySelectorAll('.entry.exp input'))
         .forEach(e => {
             trabajos.set(e.name, e.value)
         });
-    Array.from(document.querySelectorAll('.entry.exp textarea')).forEach(e => {
-        trabajos.set(e.name, e.value);
-    })
+    Array.from(document.querySelectorAll('.entry.exp textarea'))
+        .forEach(e => {
+            trabajos.set(e.name, e.value);
+        });
     let numRowsExp = document.querySelectorAll('section .entry.exp').length
+
+    //Campos tecnologías
+    let tecnologias = new Map();  
+    Array.from(document.querySelectorAll('.entry.tec input.nombreTec'))
+        .forEach(e => {
+            let nombre = e.value;
+            let nivel = e.parentNode.parentNode.querySelector('.nivelTec').value
+            tecnologias.set(nombre, nivel);
+        }); 
+
+
+
 
     let curriculum = ` <div class="esquina-doblada no-print">
                             <div class="fondo"></div>
@@ -231,6 +273,20 @@ function creaCurriculum(event) {
     }
 
     curriculum += `</section>`;
+
+    if (tecnologias.size > 0){
+        curriculum +=   `<section id="aptitudes">
+                            <h3 class="bold">TECNOLOGÍAS</h3>`
+        tecnologias.forEach((nivel,nombre)=>{
+            console.log("bu")
+        curriculum += `<div class="aptitudes-wrap">
+                            <div class="aptitud">
+                                <h4>${nombre}</h4>
+                                <div class="bar" style="width:${nivel}%"></div>
+                            </div>
+                        </div>`
+        })
+    }
 
     //curriculum = encodeURI(curriculum);
     curriculum = curriculum.replace("curriculum=", "")

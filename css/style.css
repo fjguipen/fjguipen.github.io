@@ -101,6 +101,9 @@ img{
 main > section{
     margin-bottom: 120px !important;
 }
+section h2{
+    margin-bottom:10px;
+}
 .folio{
     font-family: 'Indie Flower', cursive;
     width:90%;
