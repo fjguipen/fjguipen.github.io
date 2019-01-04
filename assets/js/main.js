@@ -8,6 +8,9 @@ window.onload = () => {
     activateColumControl()
     window.onscroll = () => {
         activateColumControl()
+
+        //let target = document.querySelector(anchor).offsetTop;
+        console.log(pageYOffset)
     }
 
 }
@@ -55,6 +58,7 @@ const loading = () => {
     
 
 }
+
 
 const fadeIn = (elemento) => {
 

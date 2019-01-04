@@ -46,6 +46,13 @@
             margin: auto
         }
     }
+    #wrapper{
+        .right-column{
+            > section {
+                padding-top: 70px !important;
+            }
+        }
+    }
 }
 @media only screen and (min-width: 768px){
     #inicio{
