@@ -322,7 +322,7 @@ COMPORTAMIENTO DEL BOTON MENU
   transition: transform 0.5s ease-in-out 0s;
   top: 62px;
   right: 0;
-  padding-top: 5px;
+  padding-top: 10px;
   height: 100vh;
   background-color: white;
   border-top: 3px solid #6e6e6e;
@@ -536,7 +536,7 @@ COMPORTAMIENTO DEL BOTON MENU
   display: none;
   background-color: #3e3d3d;
   color: white;
-  font-size: 25px;
+  font-size: 30px;
   z-index: 11;
   -webkit-transition: transform 0.1s ease-out 0s;
   -moz-transition: transform 0.1s ease-out 0s;
@@ -595,7 +595,12 @@ footer {
     width: 100%;
   }
   #wrapper #left-column-control.visible {
-    display: block;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   #experiencia .row, #estudios .row {

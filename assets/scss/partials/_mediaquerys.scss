@@ -20,7 +20,7 @@
         }
         #left-column-control{
             &.visible{
-                display: block;
+                @include d-flex-center();
             }
         }
     }

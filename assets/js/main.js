@@ -26,7 +26,7 @@ const toContent = (e) => {
 const activateColumControl = () => {
     let button = document.querySelector('#left-column-control')
     let markUp = document.querySelector('#wrapper').offsetTop
-    if (pageYOffset + 40 >= markUp ){
+    if (pageYOffset + 100 >= markUp ){
         button.classList.add('visible')
     } else {
         button.classList.remove('visible')

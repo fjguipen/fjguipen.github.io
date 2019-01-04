@@ -79,7 +79,7 @@ COMPORTAMIENTO DEL BOTON MENU
         @include transition(transform, 0.5s, ease-in-out, );
         top: $topMenuHeight - 3;
         right: 0;
-        padding-top: 5px;
+        padding-top: 10px;
         height: 100vh;
         background-color: white;
         border-top:3px solid $iconColor;
@@ -306,7 +306,7 @@ COMPORTAMIENTO DEL BOTON MENU
         display:none;
         background-color: $negro;
         color:white;
-        font-size: 25px;
+        font-size: 30px;
         z-index: 11;
         @include transition(transform, 0.1s, ease-out);
         @include transform(rotate(0deg));
