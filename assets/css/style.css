@@ -301,6 +301,7 @@ COMPORTAMIENTO DEL BOTON MENU
   padding: 5px;
   height: 65px;
   z-index: 12;
+  position: relative;
 }
 #menuCont ul {
   position: fixed;
@@ -352,7 +353,6 @@ COMPORTAMIENTO DEL BOTON MENU
   padding: 40px;
   max-width: 650px;
   flex: 1;
-  margin: auto;
 }
 #inicio div img {
   margin: auto;
@@ -609,6 +609,9 @@ footer {
     display: block;
     margin-top: 75px;
   }
+  #inicio div {
+    margin: auto;
+  }
 }
 @media only screen and (min-width: 768px) {
   #inicio div img {
@@ -634,6 +637,11 @@ footer {
   #inicio div h1 span {
     font-size: 38px;
     letter-spacing: 2px;
+  }
+}
+@media print {
+  .no-print {
+    display: none;
   }
 }
 

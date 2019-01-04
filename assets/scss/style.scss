@@ -72,6 +72,7 @@ COMPORTAMIENTO DEL BOTON MENU
     padding: 5px;
     height: $topMenuHeight;
     z-index: 12;
+    position: relative;
     ul {
         position: fixed;
         @include transform(translatex(100%));
@@ -119,7 +120,6 @@ COMPORTAMIENTO DEL BOTON MENU
         padding:40px;
         max-width: 650px;
         flex: 1;
-        margin:auto;
         img{
             margin: auto;
             width: 160px;
