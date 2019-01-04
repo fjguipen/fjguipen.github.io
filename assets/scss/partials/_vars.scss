@@ -1,0 +1,38 @@
+//Fuentes
+$baseFont: 'Montserrat', sans-serif;
+ //Tamaños
+ $baseFontSize: 18px;
+ //Grosor
+ %light {
+     font-weight: 300;
+ }
+ %regular{
+    font-weight: 400;
+}
+ %medium{
+     font-weight: 500;
+ }
+
+ %semi-bold{
+     font-weight: 600;
+ }
+ 
+//Colores
+$negro: #3e3d3d;
+$gris: #575756;
+$iconColor: #6e6e6e;
+
+%general-font-color{
+    color:$gris;
+}
+%title-font-color{
+    color:$negro;
+}
+
+//Images
+$menu:url("../img/boton.png");
+$closeMenu:url("../img/close.png");
+$downArrow: url("../img/down-arrow.png");
+
+//Espacios
+$topMenuHeight: 65px;

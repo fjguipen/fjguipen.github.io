@@ -1,0 +1,84 @@
+@media only screen and (max-width: 900px){
+    #wrapper{
+        > .left-column{
+            position: absolute;
+            @include transform(translatex(-100%));
+            @include transition(transform, 0.5s, ease-out);
+            background-color:white;
+            border-top: 3px solid $iconColor;
+            border-bottom: 3px solid $iconColor;
+            height: 100%;
+            z-index: 9;
+            padding-right: 35px;
+            &.visible{
+                @include transform(translatex(0%));
+            }
+        }
+        > .right-column{
+            padding:20px;
+            width: 100%;
+        }
+        #left-column-control{
+            &.visible{
+                display: block;
+            }
+        }
+    }
+    #experiencia .row, #estudios .row {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    #menuCont{
+        position: fixed;
+        width: 100%;
+        top:0;
+        left: 0;
+        background-color: #e1e1e1;
+        
+    }
+}
+@media only screen and (min-width: 768px){
+    #inicio{
+
+        div{
+            img{
+                width: 250px;
+                height: 250px;
+            }
+            h1{
+                font-size: 17px;
+                span{
+                    font-size: 22px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1180px){
+    #inicio{
+
+        div{
+            img{
+                width: 250px;
+                height: 250px;
+            }
+            h1{
+                font-size: 28px;
+                span{
+                    font-size: 38px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+
+}
+
+@media print{
+
+}

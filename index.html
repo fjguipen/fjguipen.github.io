@@ -1,41 +1,35 @@
 <!DOCTYPE html>
-<html lang="es_ES">
+<html lang="es">
 
 <head>
     <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--  GFONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:600" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
     <!-- JS -->
-    <script src="js/main.js"></script>
-
-    <!-- CHARSET CODIFICATION -->    
+    <script src="assets/js/main.js"></script>
+    <!-- CHARSET CODIFICATION -->
     <meta charset="UTF-8">
-
     <!-- WEB INFO & SEO -->
     <title>Javier Guisado Peña || GitHub </title>
-    <meta description="Desarrollador web || Javier Guisado Peña, curriculum personal creativo">
+    <meta name="description" content="Desarrollador web || Javier Guisado Peña, curriculum personal creativo">
 </head>
 
 <body class="no-scroll">
     <header class="no-print">
         <nav id="menuCont">
             <div class="logo">
-                <span>WebCurriculum</span>
+                <span>CV JaviGP</span>
             </div>
             <input id="menuTrigger" type="checkbox" />
             <label id="menuBut" for="menuTrigger"></label>
             <ul>
                 <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#experiencia">EXPERIENCIA LABORAL</a></li>
                 <li><a href="#estudios">ESTUDIOS</a></li>
-                <li><a href="#exp-laboral">EXPERIENCIA LABORAL</a></li>
-                <li><a href="#aptitudes">TECNOLOGÍAS</a></li>
-                <li><a href="#formulario">COMPLETA EL TUYO</a></li>
+                <li><a href="#competencias">COMPETENCIAS</a></li>
             </ul>
             <div class="clearfix"></div>
         </nav>
@@ -44,223 +38,190 @@
         <img src="img/loading.gif">
     </div>
     <main>
-        <section id="inicio" class="d-flex flex-center no-print">
-            <div class="fadingFast">
-                <h1 class=" text-center"><span>¡Hola!</span>Soy Javier Guisado y este es mi currículum</h1>
+        <section id="inicio" class="d-flex-center no-print">
+            <div class="cv-avatar">
+                <img src="assets/img/avatar.jpg" alt="Fotografía de avatar" width="250" height="250">
             </div>
+            <div class="cv-title fadingFast">
+                <h1 class=" text-center"><span class="title">Javier Guisado Peña</span>Programador web full stack</h1>
+            </div>
+            <a id="to-content" href="#wrapper" onclick="toContent(event)"></a>
         </section>
-        <section class="folio">
-            <div class="esquina-doblada no-print">
-                <div class="fondo"></div>
-                <div class="doblez"></div>
-                <div class="sombra-abajo"></div>
-                <div class="sombra-derecha"></div>
-            </div>
-            <header>
-                <h2 class="left"><strong>Curriculum Vitae</strong><br>Javier Guisado Peña</h2>
-                <div class="avatar">
-                    <img src="img/avatar.png">
-                    <div class="clearfix"></div>
-                </div>
-            </header>
-            <section id="estudios">
-                <h3 class="bold">ESTUDIOS</h3>
-                <div class="grid">
-                    <div class="">
-                        <span class="when bold">Actualidad</span><br>
-                        <span class="where">Sevilla-España</span>
-                    </div>
-                    <div class="coming">
-                        <span class="what bold fading">Técnico superior en desarrollo de Aplicaciones Web</span><br>
-                        <span class="at fading">Nuevas Profesiones</span>
-                    </div>
-                </div>
-                <div class="grid">
-                    <div class="">
-                        <span class="when bold">2015</span><br>
-                        <span class="where">Sevilla-España</span>
-                    </div>
-                    <div class="coming">
-                        <span class="what bold fading">B1 Ingles por Cambridge</span><br>
-                        <span class="at fading">Escuela de idiomas</span>
-                    </div>
-                </div>
-                <div class="grid">
-                    <div class="">
-                        <span class="when bold">Idiomas</span><br>
-                        <span class="where"></span>
-                    </div>
-                    <div class="coming">
-                        <span class="what bold fading">Español: <span class="thin">Natal</span></span><br>
-                        <span class="what bold fading">Ingles: <span class="thin">Avanzado(Escrito) Medio(Oral)</span></span><br>
-                    </div>
-                </div>
-            </section>
-            <section id="exp-laboral">
-                <h3 class="bold">EXPERIENCIA LABORAL</h3>
-                <div class="grid">
-                    <div class="">
-                        <span class="when bold">2016-2017</span><br>
-                        <span class="where">Sevilla, España</span>
-                    </div>
-                    <div class="">
-                        <span class="what bold">Farmacia Peña Guisado, Sector Farmacéutico</span><br>
-                        <span class="what bold">Cargo ocupado: Responsable de Compras</span>
-                    </div>
-                </div>
-                <div class="grid coming">
-                    <div class=""></div>
-                    <div class="descripcion fading">
-                        Tareas realizadas: Gestión de compras, análisis de ventas, administración, relaciones
-                        comerciales.
-                    </div>
-                </div>
-                <!---->
-                <div class="grid">
-                    <div class="">
-                        <span class="when bold">2016-2017</span><br>
-                        <span class="where">Sevilla, España</span>
-                    </div>
-                    <div class="">
-                        <span class="what bold">2hpc, Sector Informática</span><br>
-                        <span class="what bold">Cargo ocupado: Diseño de páginas web</span>
-                    </div>
-                </div>
-                <div class="grid coming">
-                    <div class=""></div>
-                    <div class="descripcion fading">
-                        Tareas realizadas: Diseño y desarollo de páginas web de presentación y tiendas online y
-                        ayudante en reparación y montaje de quípos informáticos.
-                    </div>
-                </div>
-                <!---->
-                <div class="grid">
-                    <div class="">
-                        <span class="when bold">Mar – Abr 2015</span><br>
-                        <span class="where">Sevilla, España</span>
-                    </div>
-                    <div class="">
-                        <span class="what bold">Ayuntamiento de Mairena del Aljarafe, Sector Urbanismo</span><br>
-                        <span class="what bold">Cargo ocupado : Practicante</span>
-                    </div>
-                </div>
-                <div class="grid coming">
-                    <div class=""></div>
-                    <div class="descripcion fading">
-                        Tareas realizadas: Estudio y elaboración de un plan de mejora para el carril bici de Mairena
-                        del Aljarafe, así como control del ruido y seguridad vial en los accesos a los centros
-                        educativos.
-                    </div>
-                </div>
-            </section>
-            <section id="aptitudes">
-                <h3 class="bold">TECNOLOGÍAS</h3>
-                <div class="aptitudes-wrap">
-                        <div class="aptitud">
-                                <h4>PHP</h4>
-                                <div class="bar" data-filled="55"></div>
-                            </div>
-                    <div class="aptitud">
-                        <h4>HTML5</h4>
-                        <div class="bar" data-filled="85"></div>
-                    </div>
-                    <div class="aptitud">
-                        <h4>CSS3</h4>
-                        <div class="bar" data-filled="70"></div>
-                    </div>
-                    <div class="aptitud">
-                        <h4>JavaScript</h4>
-                        <div class="bar" data-filled="65"></div>
-                    </div>
-                </div>
+        <div id="wrapper">
+            <div class="left-column">
+                <section id="contacto">
+                    <h2 class="title">Contacto</h2>
+                    <ul>
+                        <li class="row"><span>14.01.1987</span><span class="icon"><img src="assets/img/born.png" alt="Fecha de Nacimiento"></span></li>
+                        <li class="row"><span>Sevilla</span><span class="icon"><img src="assets/img/from.png" alt="Localidad"></span></li>
+                        <li class="row"><a href="tel:+34650905525">650905525</a><span class="icon"><img src="assets/img/tlf.png"
+                                    alt="Teléfono"></span></li>
+                        <li class="row"><span>fjguipen@gmail.com</span><span class="icon"><img src="assets/img/email.png"
+                                    alt="Correo electrónico"></span></li>
+                        <li class="row"><a href="https://github.com/fjguipen">github.com/fjguipen</a><span class="icon"><img
+                                    src="assets/img/git.png" alt="Github"></span></li>
+                    </ul>
+                </section>
+                <section id="formacion-adicional">
+                    <h2 class="title">Formación adicional</h2>
+                    <ul>
+                        <li>
+                            <h3 class="regular">AUTOAPRENDIZAJE</h3>
+                            <ul>
+                                <li>
+                                    <h4 class="heading">Desarrollo y diseño de páginas web utilizando lenguajes:</h4>
+                                    <ul>
+                                        <li>HTML</li>
+                                        <li>CSS/SASS</li>
+                                        <li>Javascript 5</li>
+                                        <li>EcmaScript 6</li>
+                                        <li>PHP</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading">Tecnologías para el desarrollo de aplicaciones web:</h4>
+                                    <ul>
+                                        <li>Node.js</li>
+                                        <li>Angular.js</li>
+                                        <li>React.js</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4 class="heading">Otras:</h4>
+                                    <ul>
+                                        <li>Wordpress</li>
+                                        <li>Prestashop</li>
+                                        <li>MongoDB</li>
+                                    </ul>
+                                </li>
+                            </ul>
 
-            </section>
-        </section>
-        <section id="formulario" class="d-flex flex-center no-print">
-            <header>
-                <h2 class="text-center">¿Quieres tener tu propio WebCurriculum?</h2>
-                <button onclick="openForm()">EMPEZAR</button>
-            </header>
-            <div id="form" class="d-none">
-                <button class="closeButton" onclick="closeForm(event)"><img src="img/close.png"></button>
-                <form action="www/nuevo-curriculum.html" method="get" onsubmit="creaCurriculum(event)">
-                    <div class="clearfix"></div>
-                    <div class="form-group">
-                        <label for="name">Nombre completo:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <section>
-                        <h2>Estudios</h2>
-                        <div class="entry studio">
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="fechaStudio">Fecha:</label>
-                                    <input type="text" id="fechaStudio0" name="fechaStudio0" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lugarStudio">Lugar:</label>
-                                    <input type="text" id="lugarStudio0" name="lugarStudio0" placeholder="Localidad, Provincia" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="tituloStudio0">Títulación:</label>
-                                    <input type="text" id="tituloStudio0" name="tituloStudio0" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="entidadStudio0">Título concedico por:</label>
-                                    <input type="text" id="entidadStudio0" name="entidadStudio0" required>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="añadir" onclick="addCampoEstudio(event)">Añadir Estudio</button>
-                    </section>
-                    <section>
-                        <h2>Experiencia Laboral</h2>
-                        <div class="entry exp">
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="fechaExp0">Fecha:</label>
-                                    <input type="text" id="fechaExp0" name="fechaExp0" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lugarExp0">Lugar:</label>
-                                    <input type="text" id="lugarExp0" name="lugarExp0" placeholder="Localidad, Provincia" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="empresaExp0">Empresa:</label>
-                                    <input type="text" id="empresaExp0" name="empresaExp0" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="cargoExp0">Cargo:</label>
-                                    <input type="text" id="cargoExp0" name="cargoExp0" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="descripcionExp0">Tareas desempeñadas:</label>
-                                    <textarea id="descripcionExp0" name="descripcionExp0" required></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="añadir" onclick="addCampoExp(event)">Añadir Experiencia</button>
-                    </section>
-                    <section>
-                            <h2>Tecnologías</h2>
-                            <button class="añadir" onclick="addCampoTec(event)">Añadir tecnología</button>
-                    </section>
-                    <button type="submit">Terminar</button>
-                </form>
+                        </li>
+                    </ul>
+                </section>
+                <section id="otros-datos">
+                    <h2 class="title">Otros datos de interés</h2>
+                    <ul>
+                        <li>
+                            <h3 class="heading">Permiso de conducir B1:</h3>
+                            <p>y vehículo propio</p>
+                        </li>
+                        <li>
+                            <h3 class="heading">Deportes, hobbies:</h3>
+                            <p>Leer, ejercicios de fuerza con el peso corporal, rutas en bicicleta, deportes de nieve y
+                                aprender cosas nuevas</p>
+                        </li>
+                    </ul>
+                </section>
             </div>
-        </section>
+            <div class="right-column">
+                <section id="experiencia">
+                    <h2 class="title">Experiencia Laboral</h2>
+                    <div class="row">
+                        <div class="left-column">
+                            <span class="heading">2016 - 2017</span>
+                            <span>Sevilla, España</span>
+                        </div>
+                        <div class="right-column">
+                            <span class="heading negro">
+                                Farmacia Peña Guisado. Sector Farmacéutico
+                            </span>
+                            <div class="row"><span class="heading">Cargo ocupado:</span><span>Responsable de compras</span></div>
+                            <div class="row"><span class="heading">Tareas realizadas:</span><span>Gestión de compras,
+                                    análisis de ventas, administración, relaciones comerciales.</span></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="left-column">
+                            <span class="heading">2015 - 2017</span>
+                            <span>Sevilla, España</span>
+                        </div>
+                        <div class="right-column">
+                            <span class="heading negro">
+                                2hpc. Sector informática
+                            </span>
+                            <div class="row"><span class="heading">Cargo ocupado:</span><span>Diseño y desarollo
+                                    páginas web</span></div>
+                            <div class="row"><span class="heading">Tareas realizadas:</span><span>Diseño y desarrollo
+                                    de páginas web de presentación y tiendas online, ayudante en reparación y montaje
+                                    de equipos informáticos.</span></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="left-column">
+                                <span class="heading"><span>Mar-Abr</span> 2015</span>
+                                <span>Sevilla, España</span>
+                            </div>
+                            <div class="right-column">
+                                <span class="heading negro">
+                                    Ayto. de Mairena del Aljarafe. Sector urbanístico
+                                </span>
+                                <div class="row"><span class="heading">Cargo ocupado:</span><span>Prácticas
+                                        páginas web</span></div>
+                                <div class="row"><span class="heading">Tareas realizadas:</span><span>Estudio y elaboración de un plan de mejora para el carril bici de Mairena del Aljarafe, control del ruido y seguridad vial en los accesos a los centros educativos.</span></div>
+                            </div>
+                        </div>
+                </section>
+                <section id="estudios">
+                    <h2 class="title">Estudios</h2>
+                    <div class="row">
+                        <div class="left-column">
+                            <span class="heading">CURSANDO</span>
+                            <span>Sevilla, España</span>
+                        </div>
+                        <div class="right-column">
+                            <span class="heading negro">
+                                Ténico superior en Desarrollo de Aplicaciones Web
+                            </span>
+                            <p>Nuebas Profesiones</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="left-column">
+                            <span class="heading">2015</span>
+                            <span>Sevilla, España</span>
+                        </div>
+                        <div class="right-column">
+                            <span class="heading negro">
+                                B1 Inglés por Cambridge
+                            </span>
+                            <p>Escuela de Idiomas</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="competencias">
+                    <h2 class="title">Habilidades y competencias</h2>
+                    <ul>
+                        <li class="row">
+                            <img src="assets/img/alone.png" alt="Competencias personales">
+                            <span>Facilidad de aprendizaje, trabajador, metódico, amable y alegre</span>
+                        </li>
+                        <li class="row">
+                            <img src="assets/img/team.png" alt="Trabajo en equipo">
+                            <span>Disposición y buena aptitud para trabajar en equipo</span>
+                        </li>
+                        <li class="row">
+                            <img src="assets/img/pc.png" alt="Programas manejados">
+                            <span>Word, Excel, Illustrator, Photoshop,Gimp, Eclipse, NetBeans, VisualEstudio, VSCode, GSuit</span>
+                        </li>
+                        <li class="row start">
+                            <img src="assets/img/comunications.png" alt="Idiomas">
+                            <div>
+                                <div class="row start">
+                                    <span class="heading">Español:</span><span>Natal</span>
+                                </div>
+                                <div class="row start">
+                                    <span class="heading">Ingles:</span><span>Avanzado (escrito)<br>Medio (oral)</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <button id="left-column-control" onclick="columControl(this, this.parentNode)">+</button>
+            <div class="clearfix"></div>
+        </div>
     </main>
-    <footer></footer>
+    <footer><p class="text-center">JaviGP &copy;2019</p></footer>
 </body>
-
 </html>

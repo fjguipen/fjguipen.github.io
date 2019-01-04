@@ -1,0 +1,54 @@
+@mixin d-flex(){
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    flex-flow:row wrap;
+}
+
+@mixin d-flex-center(){
+    @include d-flex();
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition ($property, $duration, $curve:linear ,$delay: 0s) {
+    -webkit-transition: $property $duration $curve $delay;
+    -moz-transition: $property $duration $curve $delay;
+    -ms-transition: $property $duration $curve $delay;
+    transition: $property $duration $curve $delay;
+}
+
+@mixin transform($property){
+    -webkit-transform:$property;
+    -moz-transform:$property;
+    -ms-transform:$property;
+    transform:$property;
+}
+
+@mixin transformIMP($property){
+    -webkit-transform:$property!important;
+    -moz-transform:$property!important;
+    -ms-transform:$property!important;
+    transform:$property!important;
+}
+
+@mixin box-shadow($property){
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+}
+
+@mixin no-select(){
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+@mixin fixed-top($width, $zi:9999){
+    position: fixed;
+    left:0;
+    top:0;
+    width: $width;
+    z-index: $zi;
+}

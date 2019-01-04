@@ -1,0 +1,53 @@
+//Flex boxes
+.d-flex {
+    @include d-flex();
+}
+
+.d-flex-center {
+    @include d-flex-center();
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.disabled{
+    opacity: 0.3;
+}
+.semi-bold {
+    @extend %semi-bold;
+}
+
+.regular{
+    @extend %regular;
+}
+.thin {
+    @extend %light;
+}
+
+
+.clearfix {
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.row {
+    @include d-flex();
+    flex-flow: row;
+    align-items: center;
+}
