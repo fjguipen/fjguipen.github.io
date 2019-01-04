@@ -27,6 +27,13 @@ ul {
 a {
   text-decoration: none;
 }
+a:hover, a:focus, a:active {
+  outline: none;
+}
+
+button:hover, button:focus, button:active {
+  outline: none;
+}
 
 body {
   /*font-family: 'Nanum Gothic', sans-serif;*/

@@ -8,6 +8,14 @@ ul{
 }
 a{
     text-decoration: none;
+    &:hover,&:focus,&:active{
+        outline:none;
+    }
+}
+button{
+    &:hover,&:focus,&:active{
+        outline:none;
+    }
 }
 body{
     /*font-family: 'Nanum Gothic', sans-serif;*/
