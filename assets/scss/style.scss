@@ -76,18 +76,24 @@ COMPORTAMIENTO DEL BOTON MENU
         position: fixed;
         @include transform(translatex(100%));
         @include transition(transform, 0.5s, ease-in-out, );
-        top: $topMenuHeight;
+        top: $topMenuHeight - 3;
         right: 0;
-        padding: 15px;
+        padding-top: 5px;
         height: 100vh;
-        background-color: #e1e1e1;
+        background-color: white;
+        border-top:3px solid $iconColor;
+        border-left: 3px solid $iconColor;
 
         li {
-            padding: 10px 5px;
+            padding: 10px 15px;
 
             &:hover {
                 cursor: pointer;
+                background-color: $iconColor;
                 @include transform(scale(1.06));
+                a{
+                    color:white;
+                }
             }
 
             a {
@@ -113,6 +119,7 @@ COMPORTAMIENTO DEL BOTON MENU
         padding:40px;
         max-width: 650px;
         flex: 1;
+        margin:auto;
         img{
             margin: auto;
             width: 160px;
@@ -303,6 +310,7 @@ COMPORTAMIENTO DEL BOTON MENU
         z-index: 11;
         @include transition(transform, 0.1s, ease-out);
         @include transform(rotate(0deg));
+        @include no-select();
         &.rotated{
             @include transform(rotate(45deg))
         }
