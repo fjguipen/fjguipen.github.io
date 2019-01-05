@@ -569,7 +569,9 @@ footer {
 
 @media only screen and (max-width: 900px) {
   #wrapper > .left-column {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     -webkit-transform: translatex(-100%);
     -moz-transform: translatex(-100%);
     -ms-transform: translatex(-100%);
@@ -584,6 +586,8 @@ footer {
     height: 100%;
     z-index: 9;
     padding-right: 35px;
+    padding-top: 85px;
+    overflow-y: scroll;
   }
   #wrapper > .left-column.visible {
     -webkit-transform: translatex(0%);

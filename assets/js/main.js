@@ -8,9 +8,6 @@ window.onload = () => {
     activateColumControl()
     window.onscroll = () => {
         activateColumControl()
-
-        //let target = document.querySelector(anchor).offsetTop;
-        console.log(pageYOffset)
     }
 
 }
@@ -19,7 +16,6 @@ window.onload = () => {
 const toContent = (e) => { 
     e.preventDefault()
     let contentPosition = document.querySelector('#wrapper').offsetTop;
-
     window.scrollTo({
         top: contentPosition,
         left:0,
@@ -43,10 +39,12 @@ const columControl = (button, wrapper) => {
         leftColumn.classList.add('visible')
         rightColumn.classList.add('disabled')
         button.classList.add('rotated')
+        document.querySelector('body').classList.add('no-scroll')
     } else {
         leftColumn.classList.remove('visible')
         rightColumn.classList.remove('disabled')
         button.classList.remove('rotated')
+        document.querySelector('body').classList.remove('no-scroll')
     }
 }
 const loading = () => {
@@ -55,14 +53,27 @@ const loading = () => {
     
     loader.classList.add('d-none');
     body.classList.remove('no-scroll');
-    
-
+}
+const fadeIn = (elemento) => {
+    elemento.classList.add('fadeOn')
 }
 
+const goToLink = (event, anchor) => {
+    event.preventDefault();
 
-const fadeIn = (elemento) => {
+    let element = document.querySelector(anchor)
+    let distance = element.offsetTop
+    let parent = element.offsetParent
 
-    elemento.classList.add('fadeOn')
-
-
+    while (parent && parent.tagName != "BODY"){
+        element = parent;
+        parent = element.offsetParent
+        distance += element.offsetTop
+    }
+    
+    window.scrollTo({
+        top: distance,
+        left:0,
+        behavior: 'smooth'
+    })
 }

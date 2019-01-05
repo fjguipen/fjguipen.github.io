@@ -1,7 +1,9 @@
 @media only screen and (max-width: 900px){
     #wrapper{
         > .left-column{
-            position: absolute;
+            position: fixed;
+            top:0;
+            left: 0;
             @include transform(translatex(-100%));
             @include transition(transform, 0.5s, ease-out);
             background-color:white;
@@ -10,6 +12,8 @@
             height: 100%;
             z-index: 9;
             padding-right: 35px;
+            padding-top: 85px;
+            overflow-y: scroll;
             &.visible{
                 @include transform(translatex(0%));
             }
