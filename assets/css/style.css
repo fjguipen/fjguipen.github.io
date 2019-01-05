@@ -554,6 +554,9 @@ COMPORTAMIENTO DEL BOTON MENU
   user-select: none;
   /* Standard syntax */
 }
+#wrapper #left-column-control:hover {
+  cursor: pointer;
+}
 #wrapper #left-column-control.rotated {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
