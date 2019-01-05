@@ -328,9 +328,6 @@ COMPORTAMIENTO DEL BOTON MENU
   border-top: 3px solid #6e6e6e;
   border-left: 3px solid #6e6e6e;
 }
-#menuCont ul li {
-  padding: 10px 15px;
-}
 #menuCont ul li:hover {
   cursor: pointer;
   background-color: #6e6e6e;
@@ -343,6 +340,7 @@ COMPORTAMIENTO DEL BOTON MENU
   color: white;
 }
 #menuCont ul li a {
+  padding: 10px 15px;
   color: #3e3d3d;
   font-size: 18px;
   display: block;

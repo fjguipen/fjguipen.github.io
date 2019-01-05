@@ -11,7 +11,7 @@ window.onload = () => {
     }
 
 }
-
+/*
 //Scroll suave hasta el contenido, usamos un anchor tag como refuerzo por si JS está desactivado
 const toContent = (e) => { 
     e.preventDefault()
@@ -22,6 +22,7 @@ const toContent = (e) => {
         behavior: 'smooth'
     })
 }
+*/
 const activateColumControl = () => {
     let button = document.querySelector('#left-column-control')
     let markUp = document.querySelector('#wrapper').offsetTop
@@ -70,10 +71,28 @@ const goToLink = (event, anchor) => {
         parent = element.offsetParent
         distance += element.offsetTop
     }
-    
+    //Cierro los paneles abiertos para evitar conflictos y dar prioridad al seguimiento del enlace
+    destroyPanels()
+
     window.scrollTo({
         top: distance,
         left:0,
         behavior: 'smooth'
     })
+}
+
+const destroyPanels = () => {
+    let leftColumnPanel = document.querySelector('#wrapper > .left-column')
+    let rightColumn = document.querySelector('#wrapper > .right-column')
+    let menuButton = document.querySelector('#menuTrigger')
+    let button = document.querySelector('#left-column-control')
+
+    menuButton.checked = false;
+    if(leftColumnPanel.classList.contains('visible')){
+        leftColumnPanel.classList.remove('visible')
+        rightColumn.classList.remove('disabled')
+        button.classList.remove('rotated')
+        document.querySelector('body').classList.remove('no-scroll')
+    }
+    console.log()
 }

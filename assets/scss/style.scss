@@ -86,8 +86,6 @@ COMPORTAMIENTO DEL BOTON MENU
         border-left: 3px solid $iconColor;
 
         li {
-            padding: 10px 15px;
-
             &:hover {
                 cursor: pointer;
                 background-color: $iconColor;
@@ -98,6 +96,7 @@ COMPORTAMIENTO DEL BOTON MENU
             }
 
             a {
+                padding: 10px 15px;
                 color: $negro;
                 font-size: 18px;
                 display: block;
