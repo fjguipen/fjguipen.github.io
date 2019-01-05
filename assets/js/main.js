@@ -11,18 +11,7 @@ window.onload = () => {
     }
 
 }
-/*
-//Scroll suave hasta el contenido, usamos un anchor tag como refuerzo por si JS está desactivado
-const toContent = (e) => { 
-    e.preventDefault()
-    let contentPosition = document.querySelector('#wrapper').offsetTop;
-    window.scrollTo({
-        top: contentPosition,
-        left:0,
-        behavior: 'smooth'
-    })
-}
-*/
+//El boton para abrir el panel izquierdo solo es visible al pasar la pantalla principal
 const activateColumControl = () => {
     let button = document.querySelector('#left-column-control')
     let markUp = document.querySelector('#wrapper').offsetTop
@@ -32,6 +21,10 @@ const activateColumControl = () => {
         button.classList.remove('visible')
     }
 }
+/**
+ * Control sobre el panel izquierdo, al hacer click en el boton añadimos
+ * o quitamos las clases para los estados de panel visible y no visible
+ **/
 const columControl = (button, wrapper) => {
     let leftColumn = wrapper.querySelector('.left-column')
     let rightColumn = wrapper.querySelector('.right-column')
@@ -48,6 +41,7 @@ const columControl = (button, wrapper) => {
         document.querySelector('body').classList.remove('no-scroll')
     }
 }
+//Script que pone fin al estado "Cargando"
 const loading = () => {
     let body = document.querySelector('body');
     let loader = document.querySelector('.loader');
@@ -55,10 +49,11 @@ const loading = () => {
     loader.classList.add('d-none');
     body.classList.remove('no-scroll');
 }
+
 const fadeIn = (elemento) => {
     elemento.classList.add('fadeOn')
 }
-
+//Control de los enlaces por JS, para permitir un scroll suave
 const goToLink = (event, anchor) => {
     event.preventDefault();
 
@@ -94,5 +89,4 @@ const destroyPanels = () => {
         button.classList.remove('rotated')
         document.querySelector('body').classList.remove('no-scroll')
     }
-    console.log()
 }
