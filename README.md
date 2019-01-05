@@ -1,3 +1,7 @@
 # fjguipen.github.io
 
-Web sencilla donde encontrás mi currículum y tendrás la posibilidad de crear el tuyo propio, listo para imprimir
+Representación de mi currículum personal utilizando HTML5, CSS/SASS y JS.
+
+100% responsive
+
+TODO: Versión para imprimir
